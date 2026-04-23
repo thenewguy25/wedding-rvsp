@@ -2,7 +2,11 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function Envelope() {
+interface EnvelopeProps {
+  standalone?: boolean;
+}
+
+export default function Envelope({ standalone = false }: EnvelopeProps) {
   const [opened, setOpened] = useState(false);
 
   const scrollToDetails = () => {
@@ -125,12 +129,18 @@ export default function Envelope() {
                 <div className="flex-1 h-px bg-gold-light opacity-60" />
               </div>
 
-              <button
-                onClick={scrollToDetails}
-                className="inline-block bg-gold hover:bg-gold-dark text-white font-sans text-xs uppercase tracking-[0.2em] px-6 py-3 rounded-sm transition-colors duration-200"
-              >
-                View Details &amp; RSVP
-              </button>
+              {standalone ? (
+                <p className="font-sans text-xs tracking-widest uppercase text-blush-400">
+                  Formal invitation to follow
+                </p>
+              ) : (
+                <button
+                  onClick={scrollToDetails}
+                  className="inline-block bg-gold hover:bg-gold-dark text-white font-sans text-xs uppercase tracking-[0.2em] px-6 py-3 rounded-sm transition-colors duration-200"
+                >
+                  View Details &amp; RSVP
+                </button>
+              )}
             </motion.div>
           )}
         </AnimatePresence>
