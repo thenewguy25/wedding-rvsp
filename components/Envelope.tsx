@@ -143,7 +143,7 @@ export default function Envelope({ standalone = false }: EnvelopeProps) {
           {opened && (
             <motion.div
               initial={{ y: 60, opacity: 0, x: "-50%" }}
-              animate={{ y: -220, opacity: 1, x: "-50%" }}
+              animate={{ y: -100, opacity: 1, x: "-50%" }}
               transition={{ delay: 0.45, duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
               className="absolute left-1/2 w-72 sm:w-80 rounded shadow-2xl px-8 py-10 text-center z-30"
               style={{
@@ -187,7 +187,7 @@ export default function Envelope({ standalone = false }: EnvelopeProps) {
                 className="font-serif text-3xl leading-tight mb-1"
                 style={{ color: standalone ? "#1a4060" : "#9b5b5b" }}
               >
-                Jieying &amp; John
+                Jie &amp; John
               </h2>
               <p
                 className="font-sans text-xs tracking-widest uppercase mb-4"
