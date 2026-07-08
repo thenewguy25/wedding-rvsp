@@ -12,7 +12,7 @@ export default function Venue() {
         {/* Venue details */}
         <div className="mt-10 text-center mb-10">
           <h3 className="font-serif text-2xl text-rose-deep mb-1">Marina Del Rey</h3>
-          <p className="font-sans text-sm text-blush-400">
+          <p className="font-sans text-sm text-lavender-500">
             1 Marina Dr, Bronx, NY 10465
           </p>
           <a

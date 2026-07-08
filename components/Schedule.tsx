@@ -28,13 +28,13 @@ const events = [
 
 export default function Schedule() {
   return (
-    <section className="py-24 px-6 bg-blush-50">
+    <section className="py-24 px-6 bg-lavender-50">
       <div className="max-w-2xl mx-auto">
         <SectionHeading title="The Day" />
 
         <div className="relative mt-12">
           {/* Vertical line */}
-          <div className="absolute left-1/2 -translate-x-px top-0 bottom-0 w-px bg-blush-200" />
+          <div className="absolute left-1/2 -translate-x-px top-0 bottom-0 w-px bg-lavender-200" />
 
           <div className="flex flex-col gap-10">
             {events.map((event, i) => {
@@ -50,7 +50,7 @@ export default function Schedule() {
                       {event.time}
                     </p>
                     <h3 className="font-serif text-lg text-rose-deep">{event.title}</h3>
-                    <p className="font-sans text-sm text-blush-400 mt-1">{event.description}</p>
+                    <p className="font-sans text-sm text-lavender-500 mt-1">{event.description}</p>
                   </div>
 
                   {/* Dot */}

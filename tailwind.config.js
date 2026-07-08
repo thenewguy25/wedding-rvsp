@@ -8,24 +8,33 @@ module.exports = {
     extend: {
       colors: {
         blush: {
-          50:  "#fdf6f0",
-          100: "#faeae0",
-          200: "#f5d5c1",
-          300: "#edb898",
-          400: "#e3966e",
-          500: "#d8764a",
-          600: "#c95e35",
+          50:  "#faf5fb",
+          100: "#f3e6f0",
+          200: "#f0d8dd",
+          300: "#e0b6c4",
+          400: "#c98fa3",
+          500: "#a8698a",
+          600: "#8a5170",
+        },
+        lavender: {
+          50:  "#f8f4fb",
+          100: "#ece0f2",
+          200: "#d9c3e6",
+          300: "#bd9bd2",
+          400: "#a179bd",
+          500: "#815d9e",
+          600: "#654a7d",
         },
         rose: {
-          dusty: "#c9a0a0",
-          deep:  "#9b5b5b",
+          dusty: "#b28fae",
+          deep:  "#5c3a5e",
         },
         gold: {
           light: "#d4a96a",
           DEFAULT: "#b8862a",
           dark:   "#8a6218",
         },
-        cream: "#fdf8f2",
+        cream: "#fdf8f5",
       },
       fontFamily: {
         serif: ["Playfair Display", "Georgia", "serif"],

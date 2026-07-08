@@ -25,16 +25,16 @@ export default function Envelope({ standalone = false }: EnvelopeProps) {
     document.getElementById("details")?.scrollIntoView({ behavior: "smooth" });
   };
 
-  // Light winter palette vs warm palette
-  const bg          = standalone ? "#deeef9" : "#fdf6f0";
-  const flapFill    = standalone ? "#b8d8f0" : "#f5d5c1";
-  const flapStroke  = standalone ? "#90bede" : "#e8d5c4";
-  const sideFill    = standalone ? "#c8e4f5" : "#faeae0";
-  const sideStroke  = standalone ? "#a0c8e8" : "#e8d5c4";
+  // Light winter palette vs lavender invite palette
+  const bg          = standalone ? "#deeef9" : "#ece0f2";
+  const flapFill    = standalone ? "#b8d8f0" : "#d9c3e6";
+  const flapStroke  = standalone ? "#90bede" : "#c3a3d9";
+  const sideFill    = standalone ? "#c8e4f5" : "#f3e6f0";
+  const sideStroke  = standalone ? "#a0c8e8" : "#c3a3d9";
   const envelopeBg  = standalone ? "#e8f4fb" : "white";
   const sealBg      = standalone ? "#5a9fc8" : "#b8862a";
-  const hintColor   = standalone ? "#5a8fad" : "#d8a898";
-  const headingColor = standalone ? "#2a6080" : "#b8862a";
+  const hintColor   = standalone ? "#5a8fad" : "#a179bd";
+  const headingColor = standalone ? "#2a6080" : "#654a7d";
 
   return (
     <section
@@ -149,7 +149,7 @@ export default function Envelope({ standalone = false }: EnvelopeProps) {
               style={{
                 top: 0,
                 background: "white",
-                border: `1px solid ${standalone ? "#b8d8f0" : "#f0e0d0"}`,
+                border: `1px solid ${standalone ? "#b8d8f0" : "#e6d5ec"}`,
               }}
             >
               {/* Corner snowflakes — only on standalone */}
@@ -179,19 +179,19 @@ export default function Envelope({ standalone = false }: EnvelopeProps) {
 
               <p
                 className="font-sans uppercase tracking-[0.25em] text-xs mb-3"
-                style={{ color: standalone ? "#5a90b8" : "#c9a0a0" }}
+                style={{ color: standalone ? "#5a90b8" : "#a179bd" }}
               >
                 Save the Date
               </p>
               <h2
                 className="font-serif text-3xl leading-tight mb-1"
-                style={{ color: standalone ? "#1a4060" : "#9b5b5b" }}
+                style={{ color: standalone ? "#1a4060" : "#5c3a5e" }}
               >
                 Jie &amp; John
               </h2>
               <p
                 className="font-sans text-xs tracking-widest uppercase mb-4"
-                style={{ color: standalone ? "#5a90b8" : "#c9a0a0" }}
+                style={{ color: standalone ? "#5a90b8" : "#a179bd" }}
               >
                 are getting married
               </p>

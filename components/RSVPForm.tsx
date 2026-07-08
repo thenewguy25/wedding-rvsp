@@ -64,7 +64,7 @@ export default function RSVPForm() {
           <div className="mt-12">
             <p className="text-5xl mb-4">✉️</p>
             <h3 className="font-serif text-2xl text-rose-deep mb-3">We can&apos;t wait to see you!</h3>
-            <p className="font-sans text-sm text-blush-400">
+            <p className="font-sans text-sm text-lavender-500">
               Your RSVP has been received. We&apos;ll be in touch with more details.
             </p>
           </div>
@@ -172,9 +172,9 @@ export default function RSVPForm() {
   );
 }
 
-const labelClass = "block font-sans text-xs uppercase tracking-widest text-blush-400 mb-1";
+const labelClass = "block font-sans text-xs uppercase tracking-widest text-lavender-500 mb-1";
 const inputClass =
-  "w-full font-sans text-sm text-rose-deep bg-blush-50 border border-blush-100 rounded-sm px-4 py-3 focus:outline-none focus:ring-1 focus:ring-gold placeholder-blush-200";
+  "w-full font-sans text-sm text-rose-deep bg-lavender-50 border border-lavender-100 rounded-sm px-4 py-3 focus:outline-none focus:ring-1 focus:ring-gold placeholder-lavender-200";
 
 function SectionHeading({ title }: { title: string }) {
   return (

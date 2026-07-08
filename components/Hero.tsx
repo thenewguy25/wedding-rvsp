@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 // Update these with the actual wedding date
 const WEDDING_DATE = new Date("2026-12-06T10:00:00");
@@ -32,8 +33,22 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center bg-cream text-center px-6 py-20">
-      <p className="font-sans uppercase tracking-[0.35em] text-xs text-gold mb-6">
+    <section
+      className="min-h-screen flex flex-col items-center justify-center text-center px-6 py-20"
+      style={{ background: "linear-gradient(180deg, #ece0f2 0%, #f8f0f2 45%, #fdf3ec 100%)" }}
+    >
+      <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-full overflow-hidden shadow-lg mb-8 ring-4 ring-white">
+        <Image
+          src="/images/photo01.jpg"
+          alt="Jieying and John"
+          fill
+          className="object-cover"
+          priority
+          sizes="192px"
+        />
+      </div>
+
+      <p className="font-sans uppercase tracking-[0.35em] text-xs text-lavender-600 mb-6">
         Together with their families
       </p>
 
@@ -48,7 +63,7 @@ export default function Hero() {
       </div>
 
       <p className="font-serif text-xl text-gold-dark mb-2">December 6, 2026</p>
-      <p className="font-sans text-sm tracking-widest text-blush-400 uppercase mb-12">
+      <p className="font-sans text-sm tracking-widest text-lavender-500 uppercase mb-12">
         Marina Del Rey · Bronx, NY
       </p>
 
@@ -60,7 +75,7 @@ export default function Hero() {
               <span className="font-serif text-3xl sm:text-4xl text-rose-deep tabular-nums">
                 {String(timeLeft[unit]).padStart(2, "0")}
               </span>
-              <span className="font-sans text-xs uppercase tracking-widest text-blush-400 mt-1">
+              <span className="font-sans text-xs uppercase tracking-widest text-lavender-500 mt-1">
                 {unit}
               </span>
             </div>
