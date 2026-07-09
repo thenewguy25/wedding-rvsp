@@ -9,14 +9,15 @@ export default async function handler(
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const { name, email, attending, plusOne, message } = req.body;
+  const { name, email, attending, plusOneCount, message } = req.body;
 
   if (!name || !email || !attending) {
     return res.status(400).json({ error: "Name, email, and attendance are required." });
   }
 
   const isAttending = attending === "yes";
-  const guests = isAttending ? (plusOne === "yes" ? 2 : 1) : 0;
+  const additionalGuests = Math.max(0, Number(plusOneCount) || 0);
+  const guests = isAttending ? 1 + additionalGuests : 0;
 
   try {
     await appendRsvpRow({

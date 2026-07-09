@@ -6,7 +6,7 @@ interface FormState {
   name: string;
   email: string;
   attending: "yes" | "no" | "";
-  plusOne: "yes" | "no" | "";
+  plusOneCount: string;
   message: string;
 }
 
@@ -14,7 +14,7 @@ const EMPTY_FORM: FormState = {
   name: "",
   email: "",
   attending: "",
-  plusOne: "",
+  plusOneCount: "0",
   message: "",
 };
 
@@ -131,22 +131,17 @@ export default function RSVPForm() {
 
           {form.attending === "yes" && (
             <div>
-              <label className={labelClass}>Bringing a plus one?</label>
-              <div className="flex gap-4 mt-1">
-                {(["yes", "no"] as const).map((val) => (
-                  <label key={val} className="flex items-center gap-2 cursor-pointer">
-                    <input
-                      type="radio"
-                      name="plusOne"
-                      value={val}
-                      checked={form.plusOne === val}
-                      onChange={handleChange}
-                      className="accent-gold"
-                    />
-                    <span className="font-sans text-sm text-rose-deep capitalize">{val}</span>
-                  </label>
-                ))}
-              </div>
+              <label className={labelClass}>Additional Guests You&apos;re Bringing</label>
+              <input
+                name="plusOneCount"
+                type="number"
+                min={0}
+                max={10}
+                step={1}
+                value={form.plusOneCount}
+                onChange={handleChange}
+                className={inputClass}
+              />
             </div>
           )}
 
