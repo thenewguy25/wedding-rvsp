@@ -9,19 +9,21 @@ export default async function handler(
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const { name, email, attending, guests, meal, message } = req.body;
+  const { name, email, attending, plusOne, message } = req.body;
 
   if (!name || !email || !attending) {
     return res.status(400).json({ error: "Name, email, and attendance are required." });
   }
 
+  const isAttending = attending === "yes";
+  const guests = isAttending ? (plusOne === "yes" ? 2 : 1) : 0;
+
   try {
     await appendRsvpRow({
       name: String(name),
       email: String(email),
-      attending: attending === "yes" ? "yes" : "no",
-      guests: Number(guests) || 1,
-      meal: String(meal || ""),
+      attending: isAttending ? "yes" : "no",
+      guests,
       message: String(message || ""),
     });
     return res.status(200).json({ ok: true });

@@ -5,7 +5,6 @@ export interface RsvpData {
   email: string;
   attending: "yes" | "no";
   guests: number;
-  meal: string;
   message: string;
 }
 
@@ -18,18 +17,18 @@ export async function appendRsvpRow(data: RsvpData) {
 
   const sheets = google.sheets({ version: "v4", auth });
 
+  // Sheet columns: A timestamp, B name, C email, D guests (true total), E attending, F message
   await sheets.spreadsheets.values.append({
     spreadsheetId: process.env.GOOGLE_SHEET_ID,
-    range: "Sheet1!A:G",
+    range: "Sheet1!A:F",
     valueInputOption: "USER_ENTERED",
     requestBody: {
       values: [[
         new Date().toISOString(),
         data.name,
         data.email,
-        data.attending,
         data.guests,
-        data.meal,
+        data.attending,
         data.message,
       ]],
     },

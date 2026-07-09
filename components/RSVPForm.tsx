@@ -6,7 +6,7 @@ interface FormState {
   name: string;
   email: string;
   attending: "yes" | "no" | "";
-  guests: string;
+  plusOne: "yes" | "no" | "";
   message: string;
 }
 
@@ -14,7 +14,7 @@ const EMPTY_FORM: FormState = {
   name: "",
   email: "",
   attending: "",
-  guests: "1",
+  plusOne: "",
   message: "",
 };
 
@@ -40,7 +40,7 @@ export default function RSVPForm() {
       const res = await fetch("/api/rsvp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, meal: "" }),
+        body: JSON.stringify(form),
       });
       const data = await res.json();
 
@@ -130,13 +130,23 @@ export default function RSVPForm() {
           </div>
 
           {form.attending === "yes" && (
-          <div>
-              <label className={labelClass}>Number of Guests (including yourself)</label>
-              <select name="guests" value={form.guests} onChange={handleChange} className={inputClass}>
-                {[1, 2, 3, 4].map((n) => (
-                  <option key={n} value={n}>{n}</option>
+            <div>
+              <label className={labelClass}>Bringing a plus one?</label>
+              <div className="flex gap-4 mt-1">
+                {(["yes", "no"] as const).map((val) => (
+                  <label key={val} className="flex items-center gap-2 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="plusOne"
+                      value={val}
+                      checked={form.plusOne === val}
+                      onChange={handleChange}
+                      className="accent-gold"
+                    />
+                    <span className="font-sans text-sm text-rose-deep capitalize">{val}</span>
+                  </label>
                 ))}
-              </select>
+              </div>
             </div>
           )}
 
