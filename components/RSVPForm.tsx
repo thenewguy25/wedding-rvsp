@@ -7,6 +7,8 @@ interface FormState {
   email: string;
   attending: "yes" | "no" | "";
   plusOneCount: string;
+  kids5to12: string;
+  kidsUnder5: string;
   message: string;
 }
 
@@ -15,6 +17,8 @@ const EMPTY_FORM: FormState = {
   email: "",
   attending: "",
   plusOneCount: "0",
+  kids5to12: "0",
+  kidsUnder5: "0",
   message: "",
 };
 
@@ -130,18 +134,56 @@ export default function RSVPForm() {
           </div>
 
           {form.attending === "yes" && (
-            <div>
-              <label className={labelClass}>Additional Guests You&apos;re Bringing</label>
-              <input
-                name="plusOneCount"
-                type="number"
-                min={0}
-                max={10}
-                step={1}
-                value={form.plusOneCount}
-                onChange={handleChange}
-                className={inputClass}
-              />
+            <div className="space-y-6">
+              <div>
+                <label className={labelClass}>Additional Adult Guests You&apos;re Bringing</label>
+                <input
+                  name="plusOneCount"
+                  type="number"
+                  min={0}
+                  max={10}
+                  step={1}
+                  value={form.plusOneCount}
+                  onChange={handleChange}
+                  className={inputClass}
+                />
+              </div>
+
+              <div>
+                <p className="font-sans text-xs text-lavender-500 leading-relaxed">
+                  Bringing little ones? Our venue&apos;s pricing is different for each age group,
+                  so a headcount by age helps us plan seating, meals, and budget accurately.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className={labelClass}>Kids Ages 5–12</label>
+                  <input
+                    name="kids5to12"
+                    type="number"
+                    min={0}
+                    max={10}
+                    step={1}
+                    value={form.kids5to12}
+                    onChange={handleChange}
+                    className={inputClass}
+                  />
+                </div>
+                <div>
+                  <label className={labelClass}>Kids Under 5</label>
+                  <input
+                    name="kidsUnder5"
+                    type="number"
+                    min={0}
+                    max={10}
+                    step={1}
+                    value={form.kidsUnder5}
+                    onChange={handleChange}
+                    className={inputClass}
+                  />
+                </div>
+              </div>
             </div>
           )}
 

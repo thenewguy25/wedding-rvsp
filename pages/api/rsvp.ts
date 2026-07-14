@@ -9,22 +9,27 @@ export default async function handler(
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const { name, email, attending, plusOneCount, message } = req.body;
+  const { name, email, attending, plusOneCount, kids5to12, kidsUnder5, message } = req.body;
 
   if (!name || !email || !attending) {
     return res.status(400).json({ error: "Name, email, and attendance are required." });
   }
 
   const isAttending = attending === "yes";
-  const additionalGuests = Math.max(0, Number(plusOneCount) || 0);
-  const guests = isAttending ? 1 + additionalGuests : 0;
+  const additionalGuests = isAttending ? Math.max(0, Number(plusOneCount) || 0) : 0;
+  const kidsMidCount = isAttending ? Math.max(0, Number(kids5to12) || 0) : 0;
+  const kidsYoungCount = isAttending ? Math.max(0, Number(kidsUnder5) || 0) : 0;
+  const total = isAttending ? 1 + additionalGuests + kidsMidCount + kidsYoungCount : 0;
 
   try {
     await appendRsvpRow({
       name: String(name),
       email: String(email),
       attending: isAttending ? "yes" : "no",
-      guests,
+      additionalGuests,
+      kids5to12: kidsMidCount,
+      kidsUnder5: kidsYoungCount,
+      total,
       message: String(message || ""),
     });
     return res.status(200).json({ ok: true });

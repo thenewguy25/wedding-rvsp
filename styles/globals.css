@@ -10,3 +10,12 @@ body {
   background-color: #fdf8f5;
   color: #4a2f4c;
 }
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}

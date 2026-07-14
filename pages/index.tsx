@@ -1,10 +1,10 @@
 import Head from "next/head";
-import Envelope from "@/components/Envelope";
 import Hero from "@/components/Hero";
 import Schedule from "@/components/Schedule";
 import Venue from "@/components/Venue";
 import Gallery from "@/components/Gallery";
 import RSVPForm from "@/components/RSVPForm";
+import Tabs from "@/components/Tabs";
 
 const IMAGES: string[] = [
   "/images/photo01.jpg",
@@ -30,14 +30,27 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
-      <Envelope />
-
       <div id="details">
-        <Hero />
-        <Schedule />
-        <Venue />
-        {IMAGES.length > 0 && <Gallery images={IMAGES} />}
-        <RSVPForm />
+        <Tabs
+          tabs={[
+            {
+              id: "home",
+              label: "Home",
+              content: (
+                <>
+                  <Hero />
+                  <RSVPForm />
+                </>
+              ),
+            },
+            { id: "schedule", label: "Schedule", content: <Schedule /> },
+            { id: "venue", label: "Venue", content: <Venue /> },
+            ...(IMAGES.length > 0
+              ? [{ id: "photos", label: "Photos", content: <Gallery images={IMAGES} /> }]
+              : []),
+            { id: "rsvp", label: "RSVP", content: <RSVPForm /> },
+          ]}
+        />
 
         <footer className="py-10 text-center bg-lavender-50 border-t border-lavender-100">
           <p className="font-sans text-xs uppercase tracking-widest text-lavender-400">
