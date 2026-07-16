@@ -30,6 +30,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
+      <div className="bg-gold-dark text-cream text-center text-sm sm:text-base font-sans py-3 px-4">
+        🚧 Hold your horses! You found the site before we finished building it —
+        please pardon the wet paint and duct tape. 🚧
+      </div>
+
       <div id="details">
         <Tabs
           tabs={[

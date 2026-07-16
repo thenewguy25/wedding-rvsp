@@ -26,43 +26,56 @@ const events = [
   },
 ];
 
+const SHOW_TIMELINE = false;
+
 export default function Schedule() {
   return (
     <section className="py-24 px-6 bg-lavender-50">
       <div className="max-w-2xl mx-auto">
         <SectionHeading title="The Day" />
 
-        <div className="relative mt-12">
-          {/* Vertical line */}
-          <div className="absolute left-1/2 -translate-x-px top-0 bottom-0 w-px bg-lavender-200" />
+        {SHOW_TIMELINE ? (
+          <div className="relative mt-12">
+            {/* Vertical line */}
+            <div className="absolute left-1/2 -translate-x-px top-0 bottom-0 w-px bg-lavender-200" />
 
-          <div className="flex flex-col gap-10">
-            {events.map((event, i) => {
-              const isLeft = i % 2 === 0;
-              return (
-                <div
-                  key={event.title}
-                  className={`relative flex items-center ${isLeft ? "flex-row" : "flex-row-reverse"}`}
-                >
-                  {/* Card */}
-                  <div className={`w-5/12 ${isLeft ? "text-right pr-6" : "text-left pl-6"}`}>
-                    <p className="font-sans text-xs uppercase tracking-widest text-gold mb-1">
-                      {event.time}
-                    </p>
-                    <h3 className="font-serif text-lg text-rose-deep">{event.title}</h3>
-                    <p className="font-sans text-sm text-lavender-500 mt-1">{event.description}</p>
+            <div className="flex flex-col gap-10">
+              {events.map((event, i) => {
+                const isLeft = i % 2 === 0;
+                return (
+                  <div
+                    key={event.title}
+                    className={`relative flex items-center ${isLeft ? "flex-row" : "flex-row-reverse"}`}
+                  >
+                    {/* Card */}
+                    <div className={`w-5/12 ${isLeft ? "text-right pr-6" : "text-left pl-6"}`}>
+                      <p className="font-sans text-xs uppercase tracking-widest text-gold mb-1">
+                        {event.time}
+                      </p>
+                      <h3 className="font-serif text-lg text-rose-deep">{event.title}</h3>
+                      <p className="font-sans text-sm text-lavender-500 mt-1">{event.description}</p>
+                    </div>
+
+                    {/* Dot */}
+                    <div className="absolute left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-gold border-2 border-cream" />
+
+                    {/* Spacer */}
+                    <div className="w-5/12" />
                   </div>
-
-                  {/* Dot */}
-                  <div className="absolute left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-gold border-2 border-cream" />
-
-                  {/* Spacer */}
-                  <div className="w-5/12" />
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className="mt-12 text-center py-16 px-6 border border-dashed border-lavender-200 rounded-2xl bg-white/50">
+            <p className="text-3xl mb-3">🚧</p>
+            <h3 className="font-serif text-xl text-rose-deep mb-2">Timeline Under Construction</h3>
+            <p className="font-sans text-sm text-lavender-500 max-w-sm mx-auto">
+              We&apos;re still nailing down the details (literally, there may be a hammer involved).
+              Check back soon!
+            </p>
+          </div>
+        )}
       </div>
     </section>
   );
