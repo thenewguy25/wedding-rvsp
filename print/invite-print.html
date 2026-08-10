@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Invite Print — 5x7</title>
+<style>
+  @page { size: 5in 7in; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 5in; height: 7in; }
+  .page {
+    width: 5in;
+    height: 7in;
+    overflow: hidden;
+    page-break-after: always;
+  }
+  .page:last-child { page-break-after: auto; }
+  .page img {
+    width: 5in;
+    height: 7in;
+    object-fit: cover;
+    display: block;
+  }
+</style>
+</head>
+<body>
+  <div class="page"><img src="front.jpeg" /></div>
+  <div class="page"><img src="back.jpeg" /></div>
+</body>
+</html>

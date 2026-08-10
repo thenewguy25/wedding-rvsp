@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Avery 95348 — Front pass</title>
+<style>
+  @page { size: 8.5in 11in; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 8.5in; height: 11in; position: relative; }
+
+  .box {
+    position: absolute;
+    left: 0.75in;
+    width: 7in;
+    height: 5in;
+    /* Avery die-cut guide, visible for the test print — remove/hide for final cardstock run */
+    outline: 1px dashed #bbb;
+    overflow: hidden;
+  }
+  .box1 { top: 0.5in; }
+  .box2 { top: 5.5in; }
+
+  .card-wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5in;
+    height: 7in;
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+
+  iframe {
+    width: 5in;
+    height: 7in;
+    border: 0;
+    display: block;
+  }
+</style>
+</head>
+<body>
+  <div class="box box1">
+    <div class="card-wrap"><iframe src="front-vector.html"></iframe></div>
+  </div>
+  <div class="box box2">
+    <div class="card-wrap"><iframe src="front-vector.html"></iframe></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Back — Vector</title>
+<style>
+  @page { size: 5in 7in; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 5in; height: 7in; }
+
+  body {
+    width: 5in;
+    height: 7in;
+    position: relative;
+    background: radial-gradient(120% 90% at 50% 8%, #d92433 0%, #c81b2a 45%, #b8121f 100%);
+    font-family: "Songti SC", "STSong", "Heiti SC", serif;
+    color: #fbeee0;
+    overflow: hidden;
+  }
+
+  .symbol {
+    position: absolute;
+    top: 0.22in;
+    left: 0;
+    width: 5in;
+    text-align: center;
+    line-height: 1;
+  }
+  .symbol svg { display: block; margin: 0 auto; }
+
+  /* Single vertical-rl flow: each direct block child becomes its own
+     right-to-left column automatically. Do NOT use flex here — it breaks
+     the native column-wrap behavior of vertical writing mode.
+     Sizing here is calibrated against the original backinvite.jpeg so the
+     text fills the card down to ~90% height like the source, instead of
+     leaving a large empty gap at the bottom. */
+  .columns {
+    position: absolute;
+    top: 1.3in;
+    left: 0.28in;
+    right: 0.28in;
+    bottom: 0.2in;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-size: 20px;
+    letter-spacing: 0.17em;
+  }
+  .columns > div { margin-inline-start: 0.23in; }
+
+  .small-en {
+    display: block;
+    font-size: 13.5px;
+    letter-spacing: 0.18em;
+    color: #f0d9c0;
+    margin-top: 0.07in;
+  }
+  .big { font-size: 30px; letter-spacing: 0.24em; }
+  .small-col { font-size: 16px; }
+
+  .parents {
+    position: absolute;
+    left: 0.3in;
+    top: 4.55in;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-size: 15.5px;
+    letter-spacing: 0.15em;
+  }
+  .parents > div { margin-inline-start: 0.17in; }
+  .parents .small-en { font-size: 10.5px; }
+
+  .jing-yue {
+    position: absolute;
+    left: 0.3in;
+    top: 6.22in;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-size: 19px;
+    letter-spacing: 0.15em;
+  }
+</style>
+</head>
+<body>
+  <div class="symbol">
+    <svg width="105" height="105" viewBox="0 0 100 100">
+      <defs>
+        <linearGradient id="goldBack" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#f6de9c" />
+          <stop offset="55%" stop-color="#d4a53a" />
+          <stop offset="100%" stop-color="#9c7420" />
+        </linearGradient>
+      </defs>
+      <text x="50" y="72" text-anchor="middle" font-size="80"
+            font-family="'PingFang SC','STHeiti','Songti SC',serif"
+            fill="url(#goldBack)">囍</text>
+    </svg>
+  </div>
+
+  <div class="columns">
+    <!-- one continuous column: 謹訂 -> 公曆date -> (gap) -> 星期日, all same size -->
+    <div>謹訂公曆二零二六年十二月六日　　星期日</div>
+
+    <div>農曆丙午年十月二十八日</div>
+
+    <div>結婚之喜是日假座</div>
+
+    <div>長女廖洁瑩</div>
+    <div>長男<span class="small-en">NGUYEN JOHN</span></div>
+
+    <div>為</div>
+
+    <div>纽约<span class="small-en">MARINA DEL REY</span></div>
+
+    <div>舉行結婚典禮隨後敬備喜酌</div>
+
+    <div class="small-col">　恭候</div>
+    <div class="big">光臨</div>
+
+    <div>十時半恭候</div>
+    <div>十一時半證婚</div>
+    <div>十二時入席</div>
+  </div>
+
+  <div class="parents">
+    <div>陈美琼</div>
+    <div>廖象贤<span class="small-en">LE&nbsp;BAY</span></div>
+    <div><span class="small-en">NGUYEN&nbsp;PAUL</span></div>
+  </div>
+
+  <div class="jing-yue">敬約</div>
+</body>
+</html>

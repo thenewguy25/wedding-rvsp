@@ -1,0 +1,234 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Front — Vector</title>
+<style>
+  @page { size: 5in 7in; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 5in; height: 7in; }
+
+  body {
+    width: 5in;
+    height: 7in;
+    position: relative;
+    background: linear-gradient(180deg, #cdb9e2 0%, #e9cdd6 42%, #fbe1cf 100%);
+    font-family: "Cochin", "Times New Roman", serif;
+  }
+
+  /* outer + inner border frame */
+  .frame-outer {
+    position: absolute;
+    top: 0.18in; left: 0.18in; right: 0.18in; bottom: 0.18in;
+    border: 1.5px solid #7c5a96;
+  }
+  .frame-inner {
+    position: absolute;
+    top: 0.22in; left: 0.22in; right: 0.22in; bottom: 0.22in;
+    border: 0.75px solid #7c5a96;
+    opacity: 0.55;
+  }
+
+  /* white arch card */
+  .arch {
+    position: absolute;
+    top: 0.55in;
+    left: 0.55in;
+    right: 0.55in;
+    bottom: 0.5in;
+    background: #fffdfa;
+    border-radius: 1.9in 1.9in 0.06in 0.06in;
+    box-shadow: 0 0.03in 0.15in rgba(90,50,90,0.18);
+    text-align: center;
+    padding-top: 0.55in;
+  }
+
+  .symbol {
+    line-height: 1;
+    margin-bottom: 0.16in;
+  }
+  .symbol svg { display: block; margin: 0 auto; }
+
+  .eyebrow {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 9.5px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: #4a4a8a;
+    margin-bottom: 0.14in;
+  }
+
+  .names {
+    font-family: "Snell Roundhand", "Zapfino", "Brush Script MT", cursive;
+    font-size: 46px;
+    color: #5c3a5e;
+    line-height: 1;
+    margin-bottom: 0.12in;
+  }
+
+  .invite-line {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #4a4a8a;
+    line-height: 1.5;
+    margin-bottom: 0.16in;
+    padding: 0 0.35in;
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.12in;
+    margin: 0 auto 0.16in;
+    width: 2.1in;
+  }
+  .divider .line { flex: 1; height: 1px; background: #b8862a; opacity: 0.55; }
+  .divider .mark { color: #b8862a; font-size: 11px; }
+
+  .date {
+    font-family: "Cochin", "Times New Roman", serif;
+    font-size: 20px;
+    color: #7a2e3a;
+    margin-bottom: 0.03in;
+  }
+  .ceremony {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #7a2e3a;
+    margin-bottom: 0.18in;
+  }
+
+  .venue {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #4a4a8a;
+    line-height: 1.65;
+    font-weight: 600;
+    margin-bottom: 0.18in;
+  }
+
+  .reception {
+    font-family: "Cochin", "Times New Roman", serif;
+    font-style: italic;
+    font-size: 14px;
+    color: #7a4a78;
+    margin-bottom: 0.16in;
+  }
+
+  .rsvp {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 9.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #4a4a8a;
+  }
+
+  /* botanical accent along the bottom */
+  svg.botanical {
+    position: absolute;
+    left: 0;
+    bottom: 0.18in;
+    width: 5in;
+    height: 1.5in;
+  }
+</style>
+</head>
+<body>
+  <div class="frame-outer"></div>
+  <div class="frame-inner"></div>
+
+  <div class="arch">
+    <div class="symbol">
+      <svg width="90" height="90" viewBox="0 0 100 100">
+        <defs>
+          <linearGradient id="goldFront" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#f3d98c" />
+            <stop offset="55%" stop-color="#c9962f" />
+            <stop offset="100%" stop-color="#8a6218" />
+          </linearGradient>
+        </defs>
+        <text x="50" y="72" text-anchor="middle" font-size="80"
+              font-family="'PingFang SC','STHeiti','Songti SC',serif"
+              fill="url(#goldFront)">囍</text>
+      </svg>
+    </div>
+    <div class="eyebrow">Together with their families</div>
+    <div class="names">JieYing &amp; John</div>
+    <div class="invite-line">Invite you to the celebration of<br />their marriage</div>
+
+    <div class="divider"><span class="line"></span><span class="mark">&#10022;</span><span class="line"></span></div>
+
+    <div class="date">Sunday, December 6th, 2026</div>
+    <div class="ceremony">Ceremony at 10:00 AM</div>
+
+    <div class="divider"><span class="line"></span><span class="mark">&#10022;</span><span class="line"></span></div>
+
+    <div class="venue">Marina Del Rey<br />1 Marina Dr<br />Bronx, NY 10465</div>
+
+    <div class="reception">Reception to follow</div>
+
+    <div class="divider" style="width:1.6in;"><span class="line"></span><span class="mark" style="color:#a8698a;">&#10084;</span><span class="line"></span></div>
+
+    <div class="rsvp">RSVP by October 1st</div>
+  </div>
+
+  <!-- simplified vector botanical accent -->
+  <svg class="botanical" viewBox="0 0 500 150" xmlns="http://www.w3.org/2000/svg">
+    <!-- lavender sprigs -->
+    <g stroke="#8b6fae" stroke-width="1.4" fill="none" opacity="0.85">
+      <path d="M40,150 C42,110 38,70 48,30" />
+      <path d="M460,150 C458,110 462,70 452,30" />
+    </g>
+    <g fill="#a17dc4" opacity="0.8">
+      <ellipse cx="48" cy="30" rx="2.4" ry="4" /><ellipse cx="45" cy="42" rx="2.4" ry="4" /><ellipse cx="51" cy="50" rx="2.4" ry="4" />
+      <ellipse cx="45" cy="60" rx="2.4" ry="4" /><ellipse cx="50" cy="70" rx="2.4" ry="4" /><ellipse cx="44" cy="80" rx="2.4" ry="4" />
+      <ellipse cx="452" cy="30" rx="2.4" ry="4" /><ellipse cx="455" cy="42" rx="2.4" ry="4" /><ellipse cx="449" cy="50" rx="2.4" ry="4" />
+      <ellipse cx="455" cy="60" rx="2.4" ry="4" /><ellipse cx="450" cy="70" rx="2.4" ry="4" /><ellipse cx="456" cy="80" rx="2.4" ry="4" />
+    </g>
+    <!-- leaves -->
+    <g fill="#8fa877" opacity="0.85">
+      <ellipse cx="90" cy="120" rx="16" ry="7" transform="rotate(-25 90 120)" />
+      <ellipse cx="150" cy="130" rx="18" ry="7" transform="rotate(15 150 130)" />
+      <ellipse cx="350" cy="130" rx="18" ry="7" transform="rotate(-15 350 130)" />
+      <ellipse cx="410" cy="120" rx="16" ry="7" transform="rotate(25 410 120)" />
+      <ellipse cx="250" cy="140" rx="20" ry="7" />
+    </g>
+    <!-- blooms: simple layered-petal flowers -->
+    <g>
+      <!-- flower template reused via multiple positions -->
+      <g transform="translate(110,115)">
+        <circle r="9" fill="#f0c9d6" /><circle r="9" cx="12" cy="4" fill="#f0c9d6" /><circle r="9" cx="-12" cy="4" fill="#f0c9d6" />
+        <circle r="9" cx="6" cy="14" fill="#f0c9d6" /><circle r="9" cx="-6" cy="14" fill="#f0c9d6" />
+        <circle r="4.5" fill="#c9962f" />
+      </g>
+      <g transform="translate(180,105) scale(0.85)">
+        <circle r="9" fill="#c8a6de" /><circle r="9" cx="12" cy="4" fill="#c8a6de" /><circle r="9" cx="-12" cy="4" fill="#c8a6de" />
+        <circle r="9" cx="6" cy="14" fill="#c8a6de" /><circle r="9" cx="-6" cy="14" fill="#c8a6de" />
+        <circle r="4.5" fill="#fdf3ec" />
+      </g>
+      <g transform="translate(250,118) scale(1.05)">
+        <circle r="9" fill="#f6d9c4" /><circle r="9" cx="12" cy="4" fill="#f6d9c4" /><circle r="9" cx="-12" cy="4" fill="#f6d9c4" />
+        <circle r="9" cx="6" cy="14" fill="#f6d9c4" /><circle r="9" cx="-6" cy="14" fill="#f6d9c4" />
+        <circle r="4.5" fill="#c9962f" />
+      </g>
+      <g transform="translate(320,105) scale(0.85)">
+        <circle r="9" fill="#c8a6de" /><circle r="9" cx="12" cy="4" fill="#c8a6de" /><circle r="9" cx="-12" cy="4" fill="#c8a6de" />
+        <circle r="9" cx="6" cy="14" fill="#c8a6de" /><circle r="9" cx="-6" cy="14" fill="#c8a6de" />
+        <circle r="4.5" fill="#fdf3ec" />
+      </g>
+      <g transform="translate(390,115)">
+        <circle r="9" fill="#f0c9d6" /><circle r="9" cx="12" cy="4" fill="#f0c9d6" /><circle r="9" cx="-12" cy="4" fill="#f0c9d6" />
+        <circle r="9" cx="6" cy="14" fill="#f0c9d6" /><circle r="9" cx="-6" cy="14" fill="#f0c9d6" />
+        <circle r="4.5" fill="#c9962f" />
+      </g>
+    </g>
+  </svg>
+</body>
+</html>

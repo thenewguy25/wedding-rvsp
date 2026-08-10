@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Invite Print — Letter</title>
+<style>
+  @page { size: 8.5in 11in; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 8.5in; height: 11in; }
+
+  .sheet {
+    position: relative;
+    width: 8.5in;
+    height: 11in;
+    page-break-after: always;
+  }
+  .sheet:last-child { page-break-after: auto; }
+
+  /* Card centered on the letter sheet */
+  .card {
+    position: absolute;
+    top: 2in;      /* (11 - 7) / 2 */
+    left: 1.75in;   /* (8.5 - 5) / 2 */
+    width: 5in;
+    height: 7in;
+    overflow: hidden;
+  }
+  .card img {
+    width: 5in;
+    height: 7in;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Crop marks at the 4 corners of the card */
+  .mark {
+    position: absolute;
+    background: #999;
+  }
+  .mark.h { width: 0.25in; height: 1px; }
+  .mark.v { width: 1px; height: 0.25in; }
+
+  /* top-left */
+  .tl-h { top: 2in; left: 1.5in; }
+  .tl-v { top: 1.75in; left: 1.75in; }
+  /* top-right */
+  .tr-h { top: 2in; left: 6.75in; }
+  .tr-v { top: 1.75in; left: 6.75in; }
+  /* bottom-left */
+  .bl-h { top: 9in; left: 1.5in; }
+  .bl-v { top: 9in; left: 1.75in; }
+  /* bottom-right */
+  .br-h { top: 9in; left: 6.75in; }
+  .br-v { top: 9in; left: 6.75in; }
+
+  .label {
+    position: absolute;
+    top: 0.4in;
+    left: 0;
+    width: 8.5in;
+    text-align: center;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #aaa;
+  }
+</style>
+</head>
+<body>
+  <div class="sheet">
+    <div class="label">Front &mdash; cut along marks, card is 5&times;7in</div>
+    <div class="card"><img src="front.jpeg" /></div>
+    <div class="mark h tl-h"></div><div class="mark v tl-v"></div>
+    <div class="mark h tr-h"></div><div class="mark v tr-v"></div>
+    <div class="mark h bl-h"></div><div class="mark v bl-v"></div>
+    <div class="mark h br-h"></div><div class="mark v br-v"></div>
+  </div>
+
+  <div class="sheet">
+    <div class="label">Back &mdash; cut along marks, card is 5&times;7in</div>
+    <div class="card"><img src="back.jpeg" /></div>
+    <div class="mark h tl-h"></div><div class="mark v tl-v"></div>
+    <div class="mark h tr-h"></div><div class="mark v tr-v"></div>
+    <div class="mark h bl-h"></div><div class="mark v bl-v"></div>
+    <div class="mark h br-h"></div><div class="mark v br-v"></div>
+  </div>
+</body>
+</html>
