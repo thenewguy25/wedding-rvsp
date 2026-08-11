@@ -48,12 +48,12 @@ export default function Home() {
                 </>
               ),
             },
+            { id: "rsvp", label: "RSVP", content: <RSVPForm /> },
             { id: "venue", label: "Venue", content: <Venue /> },
             { id: "schedule", label: "Schedule", content: <Schedule /> },
             ...(IMAGES.length > 0
               ? [{ id: "photos", label: "Photos", content: <Gallery images={IMAGES} /> }]
               : []),
-            { id: "rsvp", label: "RSVP", content: <RSVPForm /> },
           ]}
         />
 
