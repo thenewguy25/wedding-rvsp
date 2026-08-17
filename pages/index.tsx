@@ -4,6 +4,7 @@ import Schedule from "@/components/Schedule";
 import Venue from "@/components/Venue";
 import Gallery from "@/components/Gallery";
 import RSVPForm from "@/components/RSVPForm";
+import Honeymoon from "@/components/Honeymoon";
 import Tabs from "@/components/Tabs";
 
 const IMAGES: string[] = [
@@ -51,6 +52,7 @@ export default function Home() {
             { id: "rsvp", label: "RSVP", content: <RSVPForm /> },
             { id: "venue", label: "Venue", content: <Venue /> },
             { id: "schedule", label: "Schedule", content: <Schedule /> },
+            { id: "gifts", label: "Gifts", content: <Honeymoon /> },
             ...(IMAGES.length > 0
               ? [{ id: "photos", label: "Photos", content: <Gallery images={IMAGES} /> }]
               : []),

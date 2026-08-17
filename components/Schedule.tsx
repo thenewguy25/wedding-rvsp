@@ -1,32 +1,27 @@
 const events = [
   {
-    time: "9:30 AM",
+    time: "10:30 AM",
     title: "Guest Arrival",
     description: "Welcome! Please find your seat.",
   },
   {
-    time: "10:00 AM",
+    time: "11:00 AM",
     title: "Ceremony",
     description: "Join us as we exchange our vows.",
   },
   {
-    time: "11:00 AM",
+    time: "11:30 AM",
     title: "Cocktail Hour",
     description: "Celebrate with drinks and hors d'oeuvres.",
   },
   {
-    time: "12:00 PM",
-    title: "Reception & Lunch",
-    description: "Lunch, toasts, and dancing to follow.",
-  },
-  {
-    time: "4:00 PM",
-    title: "Send-off",
-    description: "Help us celebrate as we head into forever.",
+    time: "To Follow",
+    title: "Reception",
+    description: "Dinner, toasts, and dancing to follow.",
   },
 ];
 
-const SHOW_TIMELINE = false;
+const SHOW_TIMELINE = true;
 
 export default function Schedule() {
   return (
