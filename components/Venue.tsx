@@ -1,7 +1,5 @@
-// Replace this src with the embed URL from Google Maps:
-// Maps → Share → Embed a map → copy the src from the <iframe> tag
 const MAP_EMBED_SRC =
-  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d0!2d0!3d0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zVmVudWU!5e0!3m2!1sen!2sus!4v0";
+  "https://www.google.com/maps?q=1+Marina+Dr,+Bronx,+NY+10465&output=embed";
 
 export default function Venue() {
   return (
