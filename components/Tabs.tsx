@@ -1,6 +1,12 @@
 "use client";
-import { useState, type ReactNode } from "react";
+import { useState, useEffect, type ReactNode } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+
+// Lets any component (e.g. a "View RSVP" link in Hero) switch tabs without
+// prop-drilling: window.dispatchEvent(new CustomEvent("switch-tab", { detail: "rsvp" }))
+export function switchTab(tabId: string) {
+  window.dispatchEvent(new CustomEvent("switch-tab", { detail: tabId }));
+}
 
 export interface TabDef {
   id: string;
@@ -16,6 +22,18 @@ interface TabsProps {
 export default function Tabs({ tabs, defaultTab }: TabsProps) {
   const [active, setActive] = useState(defaultTab ?? tabs[0]?.id);
   const activeTab = tabs.find((t) => t.id === active) ?? tabs[0];
+
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const tabId = (e as CustomEvent<string>).detail;
+      if (tabs.some((t) => t.id === tabId)) {
+        setActive(tabId);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    };
+    window.addEventListener("switch-tab", handler);
+    return () => window.removeEventListener("switch-tab", handler);
+  }, [tabs]);
 
   return (
     <div>

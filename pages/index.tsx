@@ -39,16 +39,7 @@ export default function Home() {
       <div id="details">
         <Tabs
           tabs={[
-            {
-              id: "home",
-              label: "Home",
-              content: (
-                <>
-                  <Hero />
-                  <RSVPForm />
-                </>
-              ),
-            },
+            { id: "home", label: "Home", content: <Hero /> },
             { id: "rsvp", label: "RSVP", content: <RSVPForm /> },
             { id: "venue", label: "Venue", content: <Venue /> },
             { id: "schedule", label: "Schedule", content: <Schedule /> },

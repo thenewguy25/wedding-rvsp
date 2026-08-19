@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { switchTab } from "@/components/Tabs";
 
 // Update these with the actual wedding date
 const WEDDING_DATE = new Date("2026-12-06T10:30:00");
@@ -72,9 +73,16 @@ export default function Hero() {
       <p className="font-sans text-sm tracking-widest text-lavender-500 uppercase mb-2">
         Marina Del Rey · Bronx, NY
       </p>
-      <p className="font-sans text-xs tracking-widest text-lavender-400 uppercase mb-12">
+      <p className="font-sans text-xs tracking-widest text-lavender-400 uppercase mb-6">
         Reception to follow · RSVP by October 15th
       </p>
+
+      <button
+        onClick={() => switchTab("rsvp")}
+        className="inline-block mb-10 bg-gold hover:bg-gold-dark text-white font-sans text-xs uppercase tracking-[0.2em] px-8 py-3 rounded-sm transition-colors duration-200"
+      >
+        RSVP Now
+      </button>
 
       {/* Countdown */}
       {mounted ? (
