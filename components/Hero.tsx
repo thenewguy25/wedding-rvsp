@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 // Update these with the actual wedding date
-const WEDDING_DATE = new Date("2026-12-06T10:00:00");
+const WEDDING_DATE = new Date("2026-12-06T10:30:00");
 
 interface TimeLeft {
   days: number;
@@ -40,7 +40,7 @@ export default function Hero() {
       <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-full overflow-hidden shadow-lg mb-8 ring-4 ring-white">
         <Image
           src="/images/photo01.jpg"
-          alt="Jieying and John"
+          alt="John and JieYing"
           fill
           className="object-cover"
           priority
@@ -48,12 +48,18 @@ export default function Hero() {
         />
       </div>
 
+      <p className="font-sans text-base text-lavender-600 mb-1">
+        Mr. Paul Nguyen &amp; Mrs. Bay Le
+      </p>
+      <p className="font-sans text-base text-lavender-600 mb-6">
+        Mr. Xiang Xian Liao &amp; Mrs. Mei Qiong Chen
+      </p>
       <p className="font-sans uppercase tracking-[0.35em] text-xs text-lavender-600 mb-6">
-        Together with their families
+        Invite you to celebrate the marriage of their children
       </p>
 
       <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl text-rose-deep leading-tight mb-4">
-        Jieying &amp; John
+        John &amp; JieYing
       </h1>
 
       <div className="flex items-center gap-4 my-4">
@@ -62,9 +68,12 @@ export default function Hero() {
         <div className="h-px w-16 bg-gold-light opacity-60" />
       </div>
 
-      <p className="font-serif text-xl text-gold-dark mb-2">December 6, 2026</p>
-      <p className="font-sans text-sm tracking-widest text-lavender-500 uppercase mb-12">
+      <p className="font-serif text-xl text-gold-dark mb-2">Sunday, December 6, 2026 at 10:30 AM</p>
+      <p className="font-sans text-sm tracking-widest text-lavender-500 uppercase mb-2">
         Marina Del Rey · Bronx, NY
+      </p>
+      <p className="font-sans text-xs tracking-widest text-lavender-400 uppercase mb-12">
+        Reception to follow · RSVP by October 15th
       </p>
 
       {/* Countdown */}

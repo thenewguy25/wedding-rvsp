@@ -26,8 +26,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Jieying &amp; John — December 6, 2026</title>
-        <meta name="description" content="Join us to celebrate the wedding of Jieying Liao and John Nguyen on December 6, 2026!" />
+        <title>John &amp; JieYing — December 6, 2026</title>
+        <meta name="description" content="Join us to celebrate the wedding of John Nguyen and JieYing Liao on December 6, 2026!" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
@@ -61,7 +61,7 @@ export default function Home() {
 
         <footer className="py-10 text-center bg-lavender-50 border-t border-lavender-100">
           <p className="font-sans text-xs uppercase tracking-widest text-lavender-400">
-            Made with love · Jieying &amp; John · 2026
+            Made with love · John &amp; JieYing · 2026
           </p>
         </footer>
       </div>

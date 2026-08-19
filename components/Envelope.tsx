@@ -187,7 +187,7 @@ export default function Envelope({ standalone = false }: EnvelopeProps) {
                 className="font-serif text-3xl leading-tight mb-1"
                 style={{ color: standalone ? "#1a4060" : "#5c3a5e" }}
               >
-                Jie &amp; John
+                John &amp; Jie
               </h2>
               <p
                 className="font-sans text-xs tracking-widest uppercase mb-4"
