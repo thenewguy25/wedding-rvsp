@@ -17,7 +17,7 @@ const events = [
   {
     time: "To Follow",
     title: "Reception",
-    description: "Dinner, toasts, and dancing to follow.",
+    description: "Luncheon, toasts, and dancing to follow.",
   },
 ];
 
