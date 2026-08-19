@@ -1,12 +1,11 @@
-const VENMO_HANDLE = "john-nguyen-229";
+const VENMO_HANDLE = "JieYing-Liao";
 const VENMO_URL = `https://venmo.com/u/${VENMO_HANDLE}`;
 const VENMO_QR_SRC = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&margin=10&data=${encodeURIComponent(
   VENMO_URL
 )}`;
 
-// Placeholders — swap in real Zelle details when ready.
-const ZELLE_NAME = "Your Name Here";
-const ZELLE_CONTACT = "email@example.com or (555) 555-5555";
+const ZELLE_NAME = "JieYing Liao";
+const ZELLE_CONTACT = "jieying32@gmail.com";
 
 export default function Honeymoon() {
   return (
@@ -46,21 +45,19 @@ export default function Honeymoon() {
             </a>
           </div>
 
-          {/* Zelle — placeholder */}
-          <div className="rounded-2xl border border-dashed border-lavender-200 bg-white/50 p-8 text-center">
+          {/* Zelle */}
+          <div className="rounded-2xl border border-lavender-200 bg-white p-8 text-center shadow-sm">
             <p className="font-sans text-xs uppercase tracking-widest text-lavender-400 mb-2">
               Zelle
             </p>
             <h3 className="font-serif text-xl text-rose-deep mb-4">{ZELLE_NAME}</h3>
 
-            <div className="mx-auto mb-4 w-[160px] h-[160px] rounded-lg border border-lavender-100 flex items-center justify-center bg-lavender-50">
-              <span className="text-3xl">🚧</span>
+            <div className="mx-auto mb-4 w-[160px] h-[160px] rounded-lg border border-lavender-100 flex items-center justify-center bg-lavender-50 px-3">
+              <span className="font-sans text-sm text-rose-deep break-all">{ZELLE_CONTACT}</span>
             </div>
 
             <p className="font-sans text-xs text-lavender-400 leading-relaxed">
-              {ZELLE_CONTACT}
-              <br />
-              (placeholder — coming soon)
+              Send via Zelle in your banking app using the email above.
             </p>
           </div>
         </div>
